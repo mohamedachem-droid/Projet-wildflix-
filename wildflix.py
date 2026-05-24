@@ -6,8 +6,8 @@ import joblib
 
 @st.cache_data
 def charger_donnees():
-    df = pd.read_csv("films_clean.csv")
-    X = pd.read_csv("X_scaled.csv")
+    df = pd.read_csv("~/Documents/Projet Juin/etape 10/datasets/films_clean.csv") 
+    X = pd.read_csv("~/Documents/Projet Juin/etape 10/datasets/X_scaled.csv")
     return df, X
 
 @st.cache_resource
