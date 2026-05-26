@@ -32,7 +32,7 @@ def afficher_grille(df):
             )
 
             st.caption(
-                f"⭐ {film['vote_average']}/10"
+                f"⭐ {film['vote_average']:.2}/10"
             )
 
             # ===== BOUTON VOTE =====
@@ -223,7 +223,7 @@ if st.session_state["authentication_status"]:
         st.markdown(f"### {film['title']}")
         st.write(f"📅 Année : {int(film['Year'])}") # int() pour éviter l'affichage "2009.0
         st.write(f"🎭 Genre : {film['genre_principal']}")
-        st.write(f"⭐ Note : {film['vote_average']}/10")
+        st.write(f"⭐ Note : {film['vote_average']:.2}/10")
         st.write(film['overview'])
 
         # ===== BANDE-ANNONCE =====
@@ -276,7 +276,7 @@ if st.session_state["authentication_status"]:
             st.image(f"https://image.tmdb.org/t/p/w500{film['poster_path']}")
             st.markdown(f"**{film['title']}**")
             st.caption(f"{int(film['Year'])} · {film['genre_principal']}")
-            st.caption(f"⭐ {film['vote_average']}/10")
+            st.caption(f"⭐ {film['vote_average']:.2}/10")
 
     if st.session_state["authentication_status"]:
 
@@ -320,7 +320,7 @@ elif st.session_state["authentication_status"] is None:
 
 # === LES MESSAGES DE CONNECTION ===
 
-# Si l'identifiant ou le mot de passe est faux
+# Si l'identifiant ou le mot de passe est faux >>> a verifier 
 elif st.session_state["authentication_status"] is False:
     st.error("L'username ou le password est/sont incorrect")
 
